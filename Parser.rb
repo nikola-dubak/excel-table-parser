@@ -42,7 +42,7 @@ class Parser
     end
 end
 
-class Table
+class Table include Enumerable
     attr_accessor :sheet_name, :columns
     def initialize(sheet_name, columns)
         @sheet_name = sheet_name
@@ -138,7 +138,7 @@ class Table
     end
 end
 
-class Column include Enumerable
+class Column
     attr_accessor :name, :values, :table
     def initialize(name)
         @name = name
